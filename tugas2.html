@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            height: 600px;
+            width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form </h1>
+        <form action="proses.php" method="POST">
+            <label for="text">Text:</label>
+            <input type="text" id="text" name="text"><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br>
+
+            <label for="textarea">Textarea:</label>
+            <textarea id="textarea" name="textarea" rows="4"></textarea><br>
+
+            <label>Radio Button:</label><br>
+            <input type="radio" id="radio1" name="radio" value="option1">
+            <label for="radio1">Option 1</label><br>
+            <input type="radio" id="radio2" name="radio" value="option2">
+            <label for="radio2">Option 2</label><br>
+
+            <label>Checkbox:</label><br>
+            <input type="checkbox" id="checkbox1" name="checkbox1" value="check1">
+            <label for="checkbox1">Check 1</label><br>
+            <input type="checkbox" id="checkbox2" name="checkbox2" value="check2">
+            <label for="checkbox2">Check 2</label><br>
+
+            <label for="select">Select Option:</label>
+            <select id="select" name="select">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
