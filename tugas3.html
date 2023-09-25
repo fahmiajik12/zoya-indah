@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <div class="calculator" style="background-color: #333; border-radius: 10px; padding: 20px; width: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+        <input type="text" id="display" disabled style="width: 100%; padding: 10px; font-size: 24px; margin-bottom: 10px; background-color: #444; color: white; border: none; border-radius: 5px; text-align: right; outline: none;">
+        <div class="buttons" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;">
+            <button onclick="clearDisplay()" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">C</button>
+            <button onclick="appendToDisplay('7')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">7</button>
+            <button onclick="appendToDisplay('8')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">8</button>
+            <button onclick="appendToDisplay('9')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">9</button>
+            <button onclick="appendToDisplay('+')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">+</button>
+            <button onclick="appendToDisplay('4')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">4</button>
+            <button onclick="appendToDisplay('5')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">5</button>
+            <button onclick="appendToDisplay('6')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">6</button>
+            <button onclick="appendToDisplay('-')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">-</button>
+            <button onclick="appendToDisplay('1')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">1</button>
+            <button onclick="appendToDisplay('2')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">2</button>
+            <button onclick="appendToDisplay('3')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">3</button>
+            <button onclick="appendToDisplay('*')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">*</button>
+            <button onclick="appendToDisplay('0')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">0</button>
+            <button onclick="calculateResult()" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">=</button>
+            <button onclick="appendToDisplay('/')" style="padding: 10px; font-size: 20px; background-color: #666; color: white; border: none; border-radius: 5px; cursor: pointer; outline: none;">/</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let display = document.getElementById("display");
+            let currentInput = "";
+
+            function appendToDisplay(value) {
+                currentInput += value;
+                display.value = currentInput;
+            }
+
+            function clearDisplay() {
+                currentInput = "";
+                display.value = "";
+            }
+
+            function calculateResult() {
+                try {
+                    let result = eval(currentInput);
+                    display.value = result;
+                    currentInput = result.toString();
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
+
+            const buttons = document.querySelectorAll(".buttons button");
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const buttonValue = button.textContent;
+                    if (buttonValue === "=") {
+                        calculateResult();
+                    } else if (buttonValue === "C") {
+                        clearDisplay();
+                    } else {
+                        appendToDisplay(buttonValue);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+<a href="index.html">Kembali ke Beranda</a>
+</html>
