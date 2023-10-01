@@ -1,0 +1,18 @@
+/* Gaya untuk tombol "Daftar" pada layar dengan lebar maksimum 758px atau kurang */
+@media only screen and (max-width: 758px) {
+    .btn-outline-success {
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-bottom: 10px; /* Jarak bawah */
+        padding: 10px 20px; /* Padding (sesuaikan sesuai kebutuhan) */
+        display: block; /* Membuat tombol tampil sebagai blok */
+    }
+}
+
+/* Gaya untuk tombol "Masuk" pada layar dengan lebar maksimum 758px atau kurang */
+@media only screen and (max-width: 758px) {
+    .btn-outline-primary {
+        margin-bottom: 10px; /* Jarak bawah */
+        padding: 10px 20px; /* Padding (sesuaikan sesuai kebutuhan) */
+        display: block; /* Membuat tombol tampil sebagai blok */
+    }
+}
